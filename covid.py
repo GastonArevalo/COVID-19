@@ -41,7 +41,7 @@ if edad <= 60:
     if neumonia == 1:
         sospechoso = 1
         print('Paciente',nombre,' es un caso SOSPECHOSO de COVID-19')
-        finalizado = 1
+        # finalizado = 1
     elif temperatura > 37:
         fiebre = 1
         tos = int(input('Tiene Tos? ( 1(uno) para SI, 0(cero) para NO ): '))
@@ -50,7 +50,7 @@ if edad <= 60:
         sintomas = odinofagia + tos + dificultad_respiratoria
     else:
         print('Paciente', nombre, 'NO es un caso sospechoso y NO forma parte del Grupo de riesgo')
-        finalizado = 1
+        # finalizado = 1
 
 
 
@@ -67,7 +67,7 @@ else:
     if neumonia == 1:
         sospechoso = 1
         print('Paciente',nombre,' es un caso SOSPECHOSO de COVID-19')
-        finalizado = 1
+        # finalizado = 1
     elif temperatura > 37:
         fiebre = 1
         tos = int(input('Tiene Tos? ( 1(uno) para SI, 0(cero) para NO)'))
@@ -93,31 +93,35 @@ if sintomas >= 1:
             viaje_exterior = int(input('Usted ha viajado al exterior en las ultimas semanas? ( 1(uno) para SI, 0(cero) para NO ): '))
             if viaje_exterior == 1:
                 print('Paciente', nombre, ' es un caso SOSPECHOSO de COVID-19')
-                finalizado = 1
+                # finalizado = 1
             else:
                 zona_casos_confirmados = int(input('Usted estuvo en zonas nacionales con casos de transmision confirmados? ( 1(uno) para SI, 0(cero) para NO ): '))
                 if zona_casos_confirmados == 1 and sintomas > 2:
                     print('Paciente', nombre, ' es un CASO AUTOCTONO SOSPECHOSO de COVID-19')
-                    finalizado = 1
+                    # finalizado = 1
+                else:
+                    print('Paciente', nombre, ' es un CASO SOSPECHOSO de COVID-19')
+                    # finalizado = 1
 
-        datos_extras = contacto_caso + viaje_exterior + zona_casos_confirmados
+#         datos_extras = contacto_caso + viaje_exterior + zona_casos_confirmados
 
 
-if fiebre == 1 and sintomas >= 1 and (datos_extras > 0 or personal_salud == 1) and finalizado == 0:
-    sospechoso = 1
-    if sintomas >= 1 and contacto_caso == 0 and viaje_exterior == 0 and zona_casos_confirmados == 1:
-        caso_autoctono = 1
-        print('Paciente',nombre, ' es un CASO AUTOCTONO SOSPECHOSO de COVID-19')
-        finalizado = 1
-    else:
-        print('Paciente',nombre,' es un caso SOSPECHOSO de COVID-19')
-        finalizado = 1
-elif sospechoso == 0 and edad >= 60 and finalizado == 0:
-    print('Paciente',nombre,'NO es un caso sospechoso, pero forma parte del Grupo de riesgo')
-    finalizado = 1
+# if fiebre == 1 and sintomas >= 1 and (datos_extras > 0 or personal_salud == 1) and finalizado == 0:
+#     sospechoso = 1
+#     if sintomas >= 1 and contacto_caso == 0 and viaje_exterior == 0 and zona_casos_confirmados == 1:
+#         caso_autoctono = 1
+#         print('Paciente',nombre, ' es un CASO AUTOCTONO SOSPECHOSO de COVID-19')
+        # finalizado = 1
+#     else:
+#         print('Paciente',nombre,' es un caso SOSPECHOSO de COVID-19')
+        # finalizado = 1
+# elif sospechoso == 0 and edad >= 60 and finalizado == 0:
+#     print('Paciente',nombre,'NO es un caso sospechoso, pero forma parte del Grupo de riesgo')
+    # finalizado = 1
 
-elif fiebre == 0 and sintomas == 0 and neumonia == 0 and finalizado == 0:
-    print('No es un caso sospechoso')
-    finalizado = 1
+# elif fiebre == 0 and sintomas == 0 and neumonia == 0 and finalizado == 0:
+#     print('No es un caso sospechoso')
+    # finalizado = 1
+
 
 
