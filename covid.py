@@ -83,12 +83,12 @@ if sintomas >= 1:
     personal_salud = int(input('Usted forma parte del personal de salud? ( 1(uno) para SI, 0(cero) para NO ): '))
     if personal_salud == 1:
         print('Paciente', nombre, ' es un caso SOSPECHOSO de COVID-19')
-        finalizado == 1
+        # finalizado == 1
     else:
         contacto_caso = int(input('Usted estuvo en contacto con un caso confirmado de COVID-19? ( 1(uno) para SI, 0(cero) para NO ): '))
         if contacto_caso == 1:
             print('Paciente', nombre, ' es un caso SOSPECHOSO de COVID-19')
-            finalizado == 1
+            # finalizado == 1
         else:
             viaje_exterior = int(input('Usted ha viajado al exterior en las ultimas semanas? ( 1(uno) para SI, 0(cero) para NO ): '))
             if viaje_exterior == 1:
